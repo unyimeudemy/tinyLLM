@@ -1,0 +1,52 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+.env/
+envs/
+*/.venv
+*/env
+*/envs
+
+# IDE specific files
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+build/
+dist/
+sdist/
+*.egg-info/
+MANIFEST
+
+# Test coverage reports
+.coverage
+htmlcov/
+
+# Documentation build output
+docs/_build/
+
+# Log files and temporary data
+*.log
+tmp/
+temp/
+
+# Other common ignores (adjust as needed)
+*.swp  # Swap files
+*.bak  # Backup files
