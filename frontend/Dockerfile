@@ -13,6 +13,8 @@ RUN npm install
 # Copy frontend code
 COPY src/ ./src/
 COPY index.html .
+COPY tsconfig.json .
+COPY tsconfig.node.json .
 
 # Build the React app (Vite)
 RUN npm run build
