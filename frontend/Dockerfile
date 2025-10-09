@@ -15,6 +15,7 @@ COPY src/ ./src/
 COPY index.html .
 COPY tsconfig.json .
 COPY tsconfig.node.json .
+COPY vite.config.ts .  
 
 # Build the React app (Vite)
 RUN npm run build
