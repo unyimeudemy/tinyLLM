@@ -2,13 +2,15 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from llm_1.llm_1 import train_llm, infer
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 
 
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",  
+    "http://localhost:5173", 
+    "http://46.62.212.74:8000" 
 ]
 
 app.add_middleware(
@@ -38,3 +40,6 @@ def infer_model(q: Query):
     res = infer(q.message, 100)
     return {"message": res}
 
+
+
+app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="frontend")

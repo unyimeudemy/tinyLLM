@@ -1,24 +1,36 @@
-version: '3.8'
+# version: '3.8'
+
+# services:
+#   fastapi:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8001:8000"
+#     volumes:
+#       - ./main.py:/app/main.py
+#       - ./llm_1:/app/llm_1
+#       - ./tiny_transformer_weights.pth:/app/tiny_transformer_weights.pth
+#     environment:
+#       - PYTHONUNBUFFERED=1
+
+#   frontend:
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5173:5173"
+#     depends_on:
+#       - fastapi
+
+
+
+
+
+version: "3.9"
 
 services:
-  fastapi:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  web:
+    build: .
     ports:
-      - "8001:8000"
-    volumes:
-      - ./main.py:/app/main.py
-      - ./llm_1:/app/llm_1
-      - ./tiny_transformer_weights.pth:/app/tiny_transformer_weights.pth
-    environment:
-      - PYTHONUNBUFFERED=1
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    ports:
-      - "5173:5173"
-    depends_on:
-      - fastapi
+      - "8000:8000"
