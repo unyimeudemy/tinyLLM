@@ -22,18 +22,26 @@
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 
-# ---- Frontend build ----
+
+
+# ---- Build frontend (Vite) ----
 FROM node:18 AS frontend
 WORKDIR /app/frontend
 COPY frontend/ .
 RUN npm install && npm run build
 
-# ---- Backend build ----
+# ---- Build backend (FastAPI) ----
 FROM python:3.11
 WORKDIR /app
-COPY backend/ .
+
+# Copy FastAPI project files (since it's the root)
+COPY . .
+
+# Copy built frontend files into FastAPI’s static folder
 COPY --from=frontend /app/frontend/dist ./frontend/dist
+
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
