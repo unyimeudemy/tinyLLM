@@ -33,7 +33,7 @@ const ChatInput = ({setNewMessage}:any) => {
 
 
     try{
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/infer`, {
+      const res = await axios.post(`http://46.62.212.74:8080/api/infer`, {
         message: userText
       })
       console.log("res data", res.data.message)
