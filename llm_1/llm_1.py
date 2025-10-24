@@ -29,7 +29,6 @@ some warm milk and a cozy place to sleep. From then on, the cat stayed by his si
 greeting the villagers every morning with a cheerful meow. 
 """
 
-
 """------- Tokenizer --------"""
 text_set = set(training_data)
 sorted_text_char = sorted(list(text_set))
@@ -126,6 +125,8 @@ class TinyTransformer(nn.Module):
         return logits
     
 
+
+
 # model = TinyTransformer(vocab_size=len(string_to_index), n_embed=20)
 # optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
@@ -141,7 +142,7 @@ class TinyTransformer(nn.Module):
 #         if epoch % 50 == 0:
 #             print(f"Epoch {epoch}: Loss = {loss.item():.4f}")
     
-#     save_model_weights(model)
+#     # save_model_weights(model)
 
 
 # def infer(sequence: str):
@@ -156,6 +157,14 @@ class TinyTransformer(nn.Module):
 
 #     print(decode(context[0].tolist()))
 #     return decode(context[0].tolist())
+
+
+
+
+
+
+
+
 
 
 

@@ -33,7 +33,9 @@ const ChatInput = ({setNewMessage}:any) => {
 
 
     try{
-      const res = await axios.post(`http://46.62.212.74:8080/api/infer`, {
+      // const res = await axios.post(`http://46.62.212.74:8080/api/infer`, {
+      const res = await axios.post(`http://127.0.0.1:8000/api/infer`, {
+
         message: userText
       })
       console.log("res data", res.data.message)

@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from llm_1.llm_1 import train_llm, infer
+# from llm_1.llm_1_prac import train_llm, infer
+from llm_2.llm_2 import train_llm, infer
+
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
@@ -39,7 +41,7 @@ class Query(BaseModel):
 
 @app.post("/api/infer")
 def infer_model(q: Query):
-    res = infer(q.message, 100)
+    res = infer(q.message)
     return {"message": res}
 
 
